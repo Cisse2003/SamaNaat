@@ -29,6 +29,12 @@
 - **Notifications** : AlarmManager pour les rappels
 - **Minimum API** : Android 5.0 (API 21)
 
+## 🔒 Licence
+
+Ce projet est sous licence [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) — vous pouvez l’utiliser, mais **pas à des fins commerciales**, **ni le modifier**, **ni le redistribuer sans autorisation**.
+![Licence: CC BY-NC-ND 4.0](https://img.shields.io/badge/Licence-CC%20BY--NC--ND%204.0-lightgrey.svg)
+
+
 ## 📥 Installation
 
 Pour tester ou contribuer à **SamaNaat**, suivez ces étapes :
