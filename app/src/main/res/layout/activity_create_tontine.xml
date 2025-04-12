@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/tontineName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tontine_name_hint"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/green_500"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/tontineAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tontine_amount_hint"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/green_500"
+        android:layout_marginTop="8dp" />
+
+    <Spinner
+        android:id="@+id/tontineFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_500"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/tontineMembers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tontine_members_hint"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:backgroundTint="@color/green_500"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/saveTontineButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_tontine_button"
+        android:backgroundTint="@color/green_500"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

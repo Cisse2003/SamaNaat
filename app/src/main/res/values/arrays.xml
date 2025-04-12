@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="frequency_array">
+        <item>Hebdomadaire</item>
+        <item>Mensuel</item>
+    </string-array>
+    <string-array name="language_array">
+        <item>Français</item>
+        <item>Wolof</item>
+    </string-array>
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SamaNaat</string>
+    <string name="email_hint">Email walla Telefon</string>
+    <string name="password_hint">Baatu jàll</string>
+    <string name="login_button">Jokkoo</string>
+    <string name="register_link">Amul kont ? Bindal</string>
+    <string name="name_hint">Tur</string>
+    <string name="phone_hint">Telefon</string>
+    <string name="register_button">Bindu</string>
+    <string name="dashboard_title">Sama Tontine yi</string>
+    <string name="create_tontine_button">Sos tontine</string>
+    <string name="tontine_name_hint">Tur tontine</string>
+    <string name="tontine_amount_hint">Coom ñu nekk</string>
+    <string name="tontine_frequency_hint">Fukki waxtu</string>
+    <string name="tontine_members_hint">Limu ñu bokk</string>
+    <string name="save_tontine_button">Sos</string>
+    <string name="profile_name_label">Tur :</string>
+    <string name="profile_email_label">Email :</string>
+    <string name="profile_phone_label">Telefon :</string>
+    <string name="language_label">Làkk</string>
+    <string name="nav_home">Sàkk</string>
+    <string name="nav_tontines">Tontine yi</string>
+    <string name="nav_profile">Jëmm</string>
+    <string name="error_empty_fields">Fenkal ñépp</string>
+    <string name="success_register">Bindu am na</string>
+    <string name="error_invalid_credentials">Sàcc amul</string>
+    <string name="success_tontine_created">Tontine sosees na</string>
+</resources>

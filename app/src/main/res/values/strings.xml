@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SamaNaat</string>
+    <string name="email_hint">Email ou Téléphone</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="register_link">Pas de compte ? Inscrivez-vous</string>
+    <string name="name_hint">Nom</string>
+    <string name="phone_hint">Téléphone</string>
+    <string name="register_button">S’inscrire</string>
+    <string name="dashboard_title">Mes Tontines</string>
+    <string name="create_tontine_button">Créer une tontine</string>
+    <string name="tontine_name_hint">Nom de la tontine</string>
+    <string name="tontine_amount_hint">Montant par personne</string>
+    <string name="tontine_frequency_hint">Fréquence</string>
+    <string name="tontine_members_hint">Nombre de membres</string>
+    <string name="save_tontine_button">Créer</string>
+    <string name="profile_name_label">Nom :</string>
+    <string name="profile_email_label">Email :</string>
+    <string name="profile_phone_label">Téléphone :</string>
+    <string name="language_label">Langue</string>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_tontines">Tontines</string>
+    <string name="nav_profile">Profil</string>
+    <string name="error_empty_fields">Remplissez tous les champs</string>
+    <string name="success_register">Inscription réussie</string>
+    <string name="error_invalid_credentials">Identifiants incorrects</string>
+    <string name="success_tontine_created">Tontine créée</string>
+</resources>
