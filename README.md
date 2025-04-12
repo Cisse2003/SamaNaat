@@ -28,7 +28,7 @@ Ce projet est sous licence [CC BY-NC-ND 4.0](https://creativecommons.org/license
 
 ## 📦 Installation
 ```bash
-git clone https://github.com/votre-utilisateur/samanaat.git
+git clone https://github.com/Cisse2003/SamaNaat.git
 cd samanaat
 flutter pub get
 flutter run
