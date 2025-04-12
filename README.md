@@ -41,4 +41,4 @@ Pour tester ou contribuer à **SamaNaat**, suivez ces étapes :
 ### Étapes
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/your-username/samanaat.git
+   git clone https://github.com/Cisse2003/SamaNaat.git
