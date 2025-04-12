@@ -19,6 +19,13 @@ SamaNaat est une application mobile de gestion de tontines digitales, conçue po
 - **Firebase / Node.js** pour le backend
 - **APIs Mobile Money** pour les paiements
 
+## 🔒 Licence
+
+Ce projet est sous licence [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) — vous pouvez l’utiliser, mais **pas à des fins commerciales**, **ni le modifier**, **ni le redistribuer sans autorisation**.
+
+![Licence: CC BY-NC-ND 4.0](https://img.shields.io/badge/Licence-CC%20BY--NC--ND%204.0-lightgrey.svg)
+
+
 ## 📦 Installation
 ```bash
 git clone https://github.com/votre-utilisateur/samanaat.git
@@ -26,9 +33,5 @@ cd samanaat
 flutter pub get
 flutter run
 
-## 🔒 Licence
 
-Ce projet est sous licence [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) — vous pouvez l’utiliser, mais **pas à des fins commerciales**, **ni le modifier**, **ni le redistribuer sans autorisation**.
-
-![Licence: CC BY-NC-ND 4.0](https://img.shields.io/badge/Licence-CC%20BY--NC--ND%204.0-lightgrey.svg)
 
