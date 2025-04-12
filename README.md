@@ -1,5 +1,5 @@
 # SamaNaat
-![Logo de SamaNaat](https://github.com/user-attachments/assets/85d35828-961f-4c3e-a268-217d31866556)
+![SamaNaat](https://github.com/user-attachments/assets/0dc8ab3a-a937-4aab-ae3e-bc47b73e8334)
 
 **SamaNaat** (qui signifie "Ma Tontine" en wolof) est une application mobile Android conçue pour simplifier et dynamiser la gestion des tontines traditionnelles au Sénégal. Avec une interface intuitive et un thème sombre, elle permet aux utilisateurs de créer, gérer et suivre leurs tontines en toute simplicité, tout en intégrant des fonctionnalités modernes comme les notifications et les invitations.
 
