@@ -32,8 +32,8 @@
         android:id="@+id/tontineFrequency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green_500"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green_500" />
 
     <EditText
         android:id="@+id/tontineMembers"

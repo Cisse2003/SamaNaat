@@ -2,18 +2,20 @@ package fr.ul.myapplication.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
-
 import fr.ul.myapplication.R;
 import fr.ul.myapplication.adapters.TontineAdapter;
 import fr.ul.myapplication.database.DatabaseClient;
 import fr.ul.myapplication.models.Tontine;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class DashboardActivity extends AppCompatActivity {
     private RecyclerView tontineRecyclerView;
@@ -29,12 +31,23 @@ public class DashboardActivity extends AppCompatActivity {
         tontineRecyclerView = findViewById(R.id.tontineRecyclerView);
         tontineRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Tontine> tontines = DatabaseClient.getInstance(getApplicationContext())
-                .getAppDatabase()
-                .tontineDao()
-                .getTontinesByUser(String.valueOf(userId));
-        tontineAdapter = new TontineAdapter(tontines);
-        tontineRecyclerView.setAdapter(tontineAdapter);
+        // Initialiser ExecutorService et Handler
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        // Charger les tontines dans un thread d'arrière-plan
+        executor.execute(() -> {
+            List<Tontine> tontines = DatabaseClient.getInstance(getApplicationContext())
+                    .getAppDatabase()
+                    .tontineDao()
+                    .getTontinesByUser(String.valueOf(userId));
+
+            // Mettre à jour l'UI sur le thread principal
+            handler.post(() -> {
+                tontineAdapter = new TontineAdapter(tontines);
+                tontineRecyclerView.setAdapter(tontineAdapter);
+            });
+        });
 
         Button createTontineButton = findViewById(R.id.createTontineButton);
         createTontineButton.setOnClickListener(v -> {
@@ -66,11 +79,22 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         int userId = getIntent().getIntExtra("userId", -1);
-        List<Tontine> tontines = DatabaseClient.getInstance(getApplicationContext())
-                .getAppDatabase()
-                .tontineDao()
-                .getTontinesByUser(String.valueOf(userId));
-        tontineAdapter = new TontineAdapter(tontines);
-        tontineRecyclerView.setAdapter(tontineAdapter);
+
+        // Recharger les tontines dans un thread d'arrière-plan
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        executor.execute(() -> {
+            List<Tontine> tontines = DatabaseClient.getInstance(getApplicationContext())
+                    .getAppDatabase()
+                    .tontineDao()
+                    .getTontinesByUser(String.valueOf(userId));
+
+            // Mettre à jour l'UI sur le thread principal
+            handler.post(() -> {
+                tontineAdapter = new TontineAdapter(tontines);
+                tontineRecyclerView.setAdapter(tontineAdapter);
+            });
+        });
     }
 }
