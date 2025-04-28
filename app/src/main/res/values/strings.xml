@@ -25,4 +25,6 @@
     <string name="success_register">Inscription réussie</string>
     <string name="error_invalid_credentials">Identifiants incorrects</string>
     <string name="success_tontine_created">Tontine créée</string>
+    <string name="register_success">Compte créé avec succès</string>
+    <string name="error_invalid_email">Email invalide</string>
 </resources>

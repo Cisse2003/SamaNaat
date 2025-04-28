@@ -25,4 +25,6 @@
     <string name="success_register">Bindu am na</string>
     <string name="error_invalid_credentials">Sàcc amul</string>
     <string name="success_tontine_created">Tontine sosees na</string>
+    <string name="register_success">Kont bi sosuñu</string>
+    <string name="error_invalid_email">Email bi baaxul</string>
 </resources>
