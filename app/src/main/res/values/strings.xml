@@ -27,4 +27,6 @@
     <string name="success_tontine_created">Tontine créée</string>
     <string name="register_success">Compte créé avec succès</string>
     <string name="error_invalid_email">Email invalide</string>
+    <string name="error_invalid_number">Veuillez entrer un nombre valide</string>
+    <string name="error_user_not_found">Utilisateur non trouvé</string>
 </resources>

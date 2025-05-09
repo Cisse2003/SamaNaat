@@ -1,10 +1,11 @@
 <resources>
-    <string-array name="frequency_array">
-        <item>Semaine</item>
-        <item>Weer</item>
+    <string-array name="tontine_frequencies">
+        <item>Bés bu ne</item>
+        <item>Juma</item>
+        <item>Wer</item>
     </string-array>
     <string-array name="language_array">
-        <item>Français</item>
+        <item>Farañse</item>
         <item>Wolof</item>
     </string-array>
 </resources>

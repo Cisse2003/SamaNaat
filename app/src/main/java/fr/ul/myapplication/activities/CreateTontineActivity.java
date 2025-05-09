@@ -1,12 +1,17 @@
 package fr.ul.myapplication.activities;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import fr.ul.myapplication.R;
 import fr.ul.myapplication.database.DatabaseClient;
@@ -27,32 +32,56 @@ public class CreateTontineActivity extends AppCompatActivity {
         Button saveButton = findViewById(R.id.saveTontineButton);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.frequency_array, android.R.layout.simple_spinner_item);
+                R.array.tontine_frequencies, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         frequencySpinner.setAdapter(adapter);
 
         saveButton.setOnClickListener(v -> {
-            String name = nameField.getText().toString();
-            String amountStr = amountField.getText().toString();
+            String name = nameField.getText().toString().trim();
+            String amountStr = amountField.getText().toString().trim();
             String frequency = frequencySpinner.getSelectedItem().toString();
-            String membersStr = membersField.getText().toString();
+            String membersStr = membersField.getText().toString().trim();
 
             if (name.isEmpty() || amountStr.isEmpty() || membersStr.isEmpty()) {
                 Toast.makeText(this, R.string.error_empty_fields, Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            double amount = Double.parseDouble(amountStr);
-            int members = Integer.parseInt(membersStr);
+            double amount;
+            int members;
+            try {
+                amount = Double.parseDouble(amountStr);
+                members = Integer.parseInt(membersStr);
+                if (amount <= 0 || members <= 0) {
+                    Toast.makeText(this, R.string.error_invalid_number, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, R.string.error_invalid_number, Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Tontine tontine = new Tontine(name, amount, frequency, members, String.valueOf(userId));
-            DatabaseClient.getInstance(getApplicationContext())
-                    .getAppDatabase()
-                    .tontineDao()
-                    .insert(tontine);
 
-            Toast.makeText(this, R.string.success_tontine_created, Toast.LENGTH_SHORT).show();
-            finish();
+            ExecutorService executor = Executors.newSingleThreadExecutor();
+            Handler handler = new Handler(Looper.getMainLooper());
+
+            executor.execute(() -> {
+                try {
+                    DatabaseClient.getInstance(getApplicationContext())
+                            .getAppDatabase()
+                            .tontineDao()
+                            .insert(tontine);
+                    handler.post(() -> {
+                        Toast.makeText(this, R.string.success_tontine_created, Toast.LENGTH_SHORT).show();
+                        finish();
+                    });
+                } catch (Exception e) {
+                    handler.post(() -> {
+                        Toast.makeText(this, "Erreur : " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    });
+                }
+            });
         });
     }
 }
